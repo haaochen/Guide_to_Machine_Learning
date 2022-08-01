@@ -1,6 +1,6 @@
 '''
 This program calculates Gaussian distribution
-Determine x given mu and std
+Determine x given mu and std. Gives likelihood (y-axis), not probability. 
 '''
 
 from math import exp, pi, sqrt
