@@ -38,6 +38,6 @@ Coding the examples from the StatQuest Illustrated Guide to Machine Learning (Py
 
 - When SSR(mean) = SSR(fitted), then both models are equally good at fitting the data. When SSR(fitted) = 0, R Squared = 1, the fitted line fits the data perfectly
 
-- ANY 2 points have a R Squared equal to 1 - just draw a line through them
+- ANY 2 points have a R Squared equal to 1 - just draw a line through them.
 
-- 
+- R Squared can be calculated for anything we can calculated the SSR for. R Squared can be negative if the shape of the model is different.
