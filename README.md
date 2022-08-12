@@ -27,3 +27,17 @@ Coding the examples from the StatQuest Illustrated Guide to Machine Learning (Py
 - The issue with the Sum of Squared Residuals is that it only tells us the residuals, not that a model is better or worse that another
 
 - Mean Squared Error (average of SSR) can be used to compare to models with different sized data sets
+
+- MSE can seem to give differing results depending on the scale of the data and the size of the dataset. R Squared solves this problem
+
+- R Squared compares the SSR or MSE about the mean to the SSR or MSE of our model. Values are between 0 and 1 and the closer to 1 means the better the fit
+
+- R squared = (SSR(mean) - SSR(fitted line))/SSR(mean)
+
+- This equation tells us what percentage of residuals shrank around the mean when we used the fitted line
+
+- When SSR(mean) = SSR(fitted), then both models are equally good at fitting the data. When SSR(fitted) = 0, R Squared = 1, the fitted line fits the data perfectly
+
+- ANY 2 points have a R Squared equal to 1 - just draw a line through them
+
+- 
