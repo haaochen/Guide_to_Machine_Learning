@@ -41,3 +41,13 @@ Coding the examples from the StatQuest Illustrated Guide to Machine Learning (Py
 - ANY 2 points have a R Squared equal to 1 - just draw a line through them.
 
 - R Squared can be calculated for anything we can calculated the SSR for. R Squared can be negative if the shape of the model is different.
+
+- R Squared tells us the percent reduction in residuals when we use a model versus the mean
+
+- p-values tell use how confident we can be in our predictions. A common threshold is .05
+
+- When talking about p-values, a value less than the threshold tells us that there is a difference but not how different. Smaller values do not imply that the difference is large. The closer to zero, the more confident that there is a difference at all.
+
+- Fischer's Exact Test can be used to derive p-values
+
+## Linear Regression

@@ -10,24 +10,25 @@ def sumOfSquaredResiduals(obs, pres, total_length):
     return ssr
 
 def meanSquaredError(ssr, total_length):
+    mse = 0
     mse = ssr/total_length
     return mse
 
 def rSquaredSSR(mean_ssr, fitted_ssr):
-    rs = 0
-    rs = (mean_ssr - fitted_ssr)/mean_ssr
-    return rs
+    rsssr = 0
+    rsssr = (mean_ssr - fitted_ssr)/mean_ssr
+    return rsssr
 
 def rSquaredMSE(mean_mse, fitted_mse):
-    rs = 0
-    rs = (mean_mse - fitted_mse)/mean_mse
-    return rs
+    rsmse = 0
+    rsmse = (mean_mse - fitted_mse)/mean_mse
+    return rsmse
 
 observations = list(map(float, input("Please enter the observations, separated by a single space \n").split()))
-predictions_mean = list(map(float, input("Please enter the predictions, separated by a single space \n").split()))
-predictions_fitted = list(map(float, input("Please enter the predictions, separated by a single space \n").split()))
+predictions_mean = list(map(float, input("Please enter the mean prediction (enter the mean value for each observation), separated by a single space \n").split()))
+predictions_fitted = list(map(float, input("Please enter the model predictions, separated by a single space \n").split()))
 
-assert len(observations) == len(predictions_mean) == len(predictions_fitted), "The number observations and predictions is different. Please enter the the same number of observations and predictions"
+assert len(observations) == len(predictions_mean) == len(predictions_fitted), "The number observations and predictions is different. Please enter the the same number of observations, mean predictions and fitted predictions"
 total_len = len(observations)
 
 mean_ssr = sumOfSquaredResiduals(observations, predictions_mean, total_len)
@@ -36,14 +37,14 @@ fitted_ssr = sumOfSquaredResiduals(observations, predictions_fitted, total_len)
 mean_mse = meanSquaredError(mean_ssr, total_len)
 fitted_mse = meanSquaredError(fitted_ssr, total_len)
 
-r2_mean = rSquaredSSR(mean_ssr, fitted_ssr)
-r2_fitted = rSquaredMSE(mean_mse, fitted_mse)
+r2_ssr = rSquaredSSR(mean_ssr, fitted_ssr)
+r2_mse = rSquaredMSE(mean_mse, fitted_mse)
 
 print("SSR of the mean of the data is: ", mean_ssr)
 print("SSR of the model data is: ", fitted_ssr)
 
 print("MSE of the mean of the data is: ", mean_mse)
-print("MSE of the model data is: ", mean_mse)
+print("MSE of the model data is: ", fitted_mse)
 
-print("R Squared of the mean of the data is: ", r2_mean)
-print("SSR of the model data is: ", r2_fitted)
+print("R Squared using SSR is: ", r2_ssr)
+print("R Squared using MSE is: ", r2_mse)
