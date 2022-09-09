@@ -51,3 +51,19 @@ Coding the examples from the StatQuest Illustrated Guide to Machine Learning (Py
 - Fischer's Exact Test can be used to derive p-values
 
 ## Linear Regression
+
+- Linear Regression fits a line to the data that minimizes the SSR. It selects the line, the intercept and the slope that minimizes SSR
+
+- Goal of linear regression is to find the lowest SSR at the bottom of the curve. 
+
+- You can use the derivative of the curve to find the lowest point and solve for where the derivative is equal to 0
+
+- The above would be an analytical solution, which work well for certain situations
+
+- You can also use gradient descent (an iterative method) to find the optimal slope and y-axis intercept
+
+- Iterative methods start with a guess for the value then goes into a loop that imporves the guess one small step at a time
+
+- Linear regression can be used to create Linear Models
+
+- Linear Models allow us to use discrete dat ato predict something continuous or to used discrete data with continuous data
