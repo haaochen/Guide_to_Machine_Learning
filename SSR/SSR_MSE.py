@@ -2,7 +2,7 @@
 This program calculates the sum of squared residuals. This calculation is useful in determining if a model's predictions are trustworthy.
 Residual = Observed - Predicted
 SSR = sum(Observed - Predicted)^2
-The sum of squared residuals is the sum of all observations of the squared difference between the observed and predicted values
+The sum of squared residuals is the sum of the squared difference between the observed and predicted values
 '''
 
 def sumOfSquaredResiduals(obs, pres, base_ssr, total_length):

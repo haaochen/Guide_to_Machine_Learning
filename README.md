@@ -67,3 +67,33 @@ Coding the examples from the StatQuest Illustrated Guide to Machine Learning (Py
 - Linear regression can be used to create Linear Models
 
 - Linear Models allow us to use discrete dat ato predict something continuous or to used discrete data with continuous data
+
+## Gradient Descent
+
+- Sometimes there is no analytical solution to fit a model to data
+
+- A loss or cost function is a function that we want to minimize when optimizing a model to fit the data. Sometimes, a loss function will refer to a function applied to ony one data point and the term Cost Function to specifically refer to a function applied to all of the data. 
+
+- You can plot the loss function as a function of the y-axis. The answer of when to stop comes from the derivative of the curve, which tells us the slope of any tangent line that touches it. A steeper line (larger tangent) suggests we're relatively far form the bottom of the curve so we need to take a larger step. A negative derivative tells us we need to take a step to the right to get closer to the lowest SSR. A smaller value suggests that we are relatively close to the bottom of the curve, so take a small step. A positive derivative tells us tha twe need to ttake a step to the left to get closer to the lowest SSR (loss function)
+
+- One way to take the derivative is the Chain Rule. 
+
+- - Create a link between the intercept and the SSR by rewriting the SSR as the function of the residual. SSR = (Residual)^2
+Residual = Height - (intercept + 0.64 * weight)
+
+- Derivative of SSR with respect to the intercept:
+
+- - (d SSR/d Intercept) = d SSR/d Residual * d Residual/d Intercept
+
+- Use the Power Rule to solve for the two derivatives
+
+- - d Residual/d Intercept = d (Height - (Intercept + 0.64 * wieght)) / d Intercept
+
+- - d SSR/d Residual = d/d Residual (Residual) ^2 = 2 * Residual
+
+- - d SSR / d Intercept = 2 * Residual x-1
+
+- - 2 * (Height - (INtercept + 0.64 * weight))x - 1
+
+- - -2 * (Height - (INtercept + 0.64 * weight))
+
