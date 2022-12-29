@@ -1,6 +1,6 @@
 # Guide_to_Machine_Learning
 
-Coding the examples from the StatQuest Illustrated Guide to Machine Learning (Python)
+Coding the examples from the StatQuest Illustrated Guide to Machine Learning (Python). The code in this repository is my own, however, the credit for the material that is the inspiration for this repository goes to Josh Starmer, Ph.D, author of The StatQuest Illustrated Guide to Machine Learning. Please consider purchasing a copy of this excellent book for your own learning.
 
 ## Discrete Probability Distributions
 
@@ -62,7 +62,7 @@ Coding the examples from the StatQuest Illustrated Guide to Machine Learning (Py
 
 - You can also use gradient descent (an iterative method) to find the optimal slope and y-axis intercept
 
-- Iterative methods start with a guess for the value then goes into a loop that imporves the guess one small step at a time
+- Iterative methods start with a guess for the value then goes into a loop that improves the guess one small step at a time
 
 - Linear regression can be used to create Linear Models
 
@@ -70,7 +70,7 @@ Coding the examples from the StatQuest Illustrated Guide to Machine Learning (Py
 
 ## Gradient Descent
 
-- Sometimes there is no analytical solution to fit a model to data
+- Sometimes there is no analytical solution to fit a model to data. Gradient descent starts with a guess and improves over time towards an optimal solution.
 
 - A loss or cost function is a function that we want to minimize when optimizing a model to fit the data. Sometimes, a loss function will refer to a function applied to ony one data point and the term Cost Function to specifically refer to a function applied to all of the data. 
 
@@ -87,7 +87,7 @@ Residual = Height - (intercept + 0.64 * weight)
 
 - Use the Power Rule to solve for the two derivatives
 
-- - d Residual/d Intercept = d (Height - (Intercept + 0.64 * wieght)) / d Intercept
+- - d Residual/d Intercept = d (Height - (Intercept + 0.64 * weight)) / d Intercept
 
 - - d SSR/d Residual = d/d Residual (Residual) ^2 = 2 * Residual
 
