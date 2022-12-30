@@ -80,7 +80,7 @@ Coding the examples from the StatQuest Illustrated Guide to Machine Learning (Py
 
 - When there are many parameters, use stochastic gradient descent becuase gradient descent can be slow for big data. Stochastic gradient descent randomly picks one datapoint per step so that only one term is computed per derivative for  ach iteration.
 
-- Gradient Descnet may not always find the global optimal value in a graph of data that results in multiple local minimums
+- Gradient Descnet may not always find the global optimal value in a graph of data that results in multiple local minimums. To avoid this, try using different random numbers to initialize the parameters that we want to optimize, Fiddle around with step size to make it a little larger, or use stchastic gradient descent to increase the randomness.
 
 ## Logistic Regression
 
