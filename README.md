@@ -76,24 +76,11 @@ Coding the examples from the StatQuest Illustrated Guide to Machine Learning (Py
 
 - You can plot the loss function as a function of the y-axis. The answer of when to stop comes from the derivative of the curve, which tells us the slope of any tangent line that touches it. A steeper line (larger tangent) suggests we're relatively far form the bottom of the curve so we need to take a larger step. A negative derivative tells us we need to take a step to the right to get closer to the lowest SSR. A smaller value suggests that we are relatively close to the bottom of the curve, so take a small step. A positive derivative tells us tha twe need to ttake a step to the left to get closer to the lowest SSR (loss function)
 
-- One way to take the derivative is the Chain Rule. 
+- One way to take the derivative is the Chain Rule. The chain rule links the residual to the SSR by rewriting the SSR as a function of the residual
 
-- - Create a link between the intercept and the SSR by rewriting the SSR as the function of the residual. SSR = (Residual)^2
-Residual = Height - (intercept + 0.64 * weight)
+- When there are many parameters, use stochastic gradient descent becuase gradient descent can be slow for big data. Stochastic gradient descent randomly picks one datapoint per step so that only one term is computed per derivative for  ach iteration.
 
-- Derivative of SSR with respect to the intercept:
+- Gradient Descnet may not always find the global optimal value in a graph of data that results in multiple local minimums
 
-- - (d SSR/d Intercept) = d SSR/d Residual * d Residual/d Intercept
-
-- Use the Power Rule to solve for the two derivatives
-
-- - d Residual/d Intercept = d (Height - (Intercept + 0.64 * weight)) / d Intercept
-
-- - d SSR/d Residual = d/d Residual (Residual) ^2 = 2 * Residual
-
-- - d SSR / d Intercept = 2 * Residual x-1
-
-- - 2 * (Height - (INtercept + 0.64 * weight))x - 1
-
-- - -2 * (Height - (INtercept + 0.64 * weight))
+## Logistic Regression
 
