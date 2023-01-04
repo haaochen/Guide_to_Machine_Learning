@@ -78,9 +78,36 @@ Coding the examples from the StatQuest Illustrated Guide to Machine Learning (Py
 
 - One way to take the derivative is the Chain Rule. The chain rule links the residual to the SSR by rewriting the SSR as a function of the residual
 
-- When there are many parameters, use stochastic gradient descent becuase gradient descent can be slow for big data. Stochastic gradient descent randomly picks one datapoint per step so that only one term is computed per derivative for  ach iteration.
+- When there are many parameters, use stochastic gradient descent becuase gradient descent can be slow for big data. Stochastic gradient descent randomly picks one datapoint per step so that only one term is computed per derivative for each iteration.
 
-- Gradient Descnet may not always find the global optimal value in a graph of data that results in multiple local minimums. To avoid this, try using different random numbers to initialize the parameters that we want to optimize, Fiddle around with step size to make it a little larger, or use stchastic gradient descent to increase the randomness.
+- Gradient Descnet may not always find the global optimal value in a graph of data that results in multiple local minimums. To avoid this, try using different random numbers to initialize the parameters that we want to optimize, Fiddle around with step size to make it a little larger, or use stochastic gradient descent to increase the randomness.
 
 ## Logistic Regression
 
+- Logistic regression comes into play when we want to classify something continuous. Logistic regression is can be thought of as a logistic classifier. the y-axis on a logistic regression graph represents probability. Probabilities have a threshold, usually 0.5
+
+- Likelihoods are use to evaluate how a statistical model fits the dataset. Likelihoods are used instead of SSR for logistic regression
+
+- Calculate the likelihood for the entire model by multiplying likelihoods together. When fitting multiple models, the model with the maximum likelihood is the optimal model. Underflow can happen when multiplying small numbers if the computer is not capable of storing the result. To avoid underflow, add logarithms.
+
+- Weaknesses in logistic regression include that there is an assumption that there is a relationship between the both variables. We assume that an s-shaped model will mostly fit the data. If not, then we need to use another model.
+
+## Naive Bayes
+
+- Naive Bayes is a simple but very effective classifier. It uses prior probability (an initial guess) multiplied by the probabilities of seeing desired results, given a certain condition. Then the same for undesired results and compare.
+
+- Most common Naive bayes is multinomial Naive Bayes.
+
+- We usually derive prior probabilities from the training data. 
+
+- Naive Bayes is naive because it ignores word order and phrasing - it considers each word independently.
+
+- Missing data can be an issue as desired data may only appear in one category in the training data. Because of this, the desired data will always be categorized into one category. Naive Bayes eliminates this problem by adding a pseudocount to each word.
+
+- Naive Bayes works well for discrete data. Continuous data makes use of Gaussian Naive Bayes
+
+- If the data is continuous but not Gaussian, we can use any statistical distribution in combination with Naive Bayes, but it willbe known by a different name (e.g. Exponential Naive Bayes)
+
+- Multinomial Naive Bayes and Gaussian Naive Bayes can be used together when necessary if the data is both continuous and discrete
+
+## Assessing Model Performance
