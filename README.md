@@ -111,3 +111,18 @@ Coding the examples from the StatQuest Illustrated Guide to Machine Learning (Py
 - Multinomial Naive Bayes and Gaussian Naive Bayes can be used together when necessary if the data is both continuous and discrete
 
 ## Assessing Model Performance
+
+- When assessing which model performs better, one of the tools used is a confusion matrix, which identifies the different outcomes and the predicted outcome in a grid. The highest score in each row determines how well the model performed for that condition. Whent he actual and predectied values are both YES, then that is a true positive. When the actual value is YES and the predicted value is NO, then that is a false negative.
+WHen the actual value is NO and the predicted value is YES then that is a false positive. When the actual value is NO and the predicted value is no, then that is a true negative. The confusion matrix contians the square of the number of outcomes rows and columns. There is no standard for creating a confusion matrix so make sure that you read the documentation for how to read a confusion matrix before interpreting results.
+
+- Sensitivity and Specificity can help us determine how much better a model is than another model at predictions.
+
+- True positive rate = Recall = Sensitivity
+
+- Confusion matrices can changed based on the threshold for classification. If it is important to get every True Positive then the threshold will be lower. If it is important to get all of the true negatives, then the threshold will be higher. We will end up with many confusion matrices if we were to test at many thresholds.Receiver Operating characteristic (ROC) graphs help to identify a good classification threshold. The y-axis indicates the number of positive predictions that were correctly classified. The x-axis indicates the number of negative predictions that were incorrectly classified. A diagonal line represents that TP rate = FP rate
+
+- While ROC graphs are great for selecting a threshold, AUC graphs compare how one model performs vs. another. This is a good option if we have multiple models (more than 2 or so). The model with the highest AUC is the most accurate.
+
+- ROC graphs make any model that predicts No 100% of the time look relaly good. Precision recall graphs are an alternative for imbalanced data. In a precision recall graph, precision is on the x-axis and recall is on the y-axis. It works because precision does not includ the number of true negatives.
+
+## Regularization - Preventing Overfitting
