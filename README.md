@@ -126,3 +126,14 @@ WHen the actual value is NO and the predicted value is YES then that is a false 
 - ROC graphs make any model that predicts No 100% of the time look relaly good. Precision recall graphs are an alternative for imbalanced data. In a precision recall graph, precision is on the x-axis and recall is on the y-axis. It works because precision does not includ the number of true negatives.
 
 ## Regularization - Preventing Overfitting
+
+- The more flexible a machine learning method is, the easier it is to overfit the Training Data. This will allow a model to fit the training data very well but make horrible predictions on the New Data. When this happens we say that the model has los bias and high variance. We can solve this problem with regularization
+
+- Ridge regularization/L2 Regularization owrks by minimizing SSR and a penalty that's proportional to the square of the slope. If the lamba is 0, then the new line derived form ridge regularization is not different than a line tha tminimizes the SSR/ As lambda grows, the line slope decreases. There is no good way to determin what the best lambda will be so we pick a bunch of values including 0 and see how well each one performs using cross validation. 
+
+- If a model includes 4 parameters, the th eridge penalties would include the sum of the squares of the 4 slopes associated with those variables. The Ridge penalty never includes the intercept becuase it does not directly affect how any of the variables predict height. If there is a variable that is not useful in model prediction it will shrink a lot compared to the slope of other variable which will shrink less. Shrinking the useless variable parameter will shrink the penalty without increasing the SSR. Shrinking the useful variables' slopes would increase the SSR.
+
+- Lasso/L1 Regularization/Absolute Value works by taking the absolute value of the parameter
+
+- Ridge regularizaiton can only shrink the parameters to be asymptotically close to 0 but lasso regularization can shrink the parameter all the way down to 0. Ridge and Lasso
+ Regularization are frequently combined to get hte best of both worlds. Lasso regularization is usefule when we need to eliminate useless variable and Ridge regularization is useful when we think most of the variables are useful
