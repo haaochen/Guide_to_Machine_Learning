@@ -83,10 +83,21 @@ selected_avg_age = average_for_each_age[total_gini_impurities_for_age.index(min_
 print("The corrosponding age is: {0}".format(selected_avg_age))
 print("the final results of calculating total Gini Impurities is as follows: \nLoves Popcorn: {0}\nLoves Soda: {1}\nAge Less Than {2}: {3}".format(total_gini_impurity_popcorn, total_gini_impurity_soda, selected_avg_age, min_impurity_age))
 print("The variable with the lowest Gini Impurity is the root node (Loves Soda)")
-print("Once again, the tree for Loves Soda is (Loves Soda, Loves Troll 2/Hates Troll 2 and Hates Soda, Loves Troll 2/Hates Troll 2): {0},{1},{2},{3}".format(loves_troll_2_loves_soda, hates_troll_2_loves_soda, loves_troll_2_hates_soda, hates_troll_2_hates_soda))
-print("The left side of the tree is impure, so we must pick another variable (either Loves Popcorn or Age < 15). We must calculate the Gini impurities for each variable based on Loves Soda")
+print("Once again, the tree for Loves Soda is (Loves Soda, Loves Troll 2/Hates Troll 2 and Hates Soda, Loves Troll 2/Hates Troll 2): {0},{1},{2},{3}\n".format(loves_troll_2_loves_soda, hates_troll_2_loves_soda, loves_troll_2_hates_soda, hates_troll_2_hates_soda))
+print("The left side of the tree is impure, so we must pick another variable (either Loves Popcorn or Age < 15). We must calculate the Gini impurities for each of the other variables based on Loves Soda")
 
 #Calcuate the Gini Impurity for Loves Popcorn
-
+loves_soda_popcorn_troll_2 = len(df.loc[(df['Loves Soda'] == 'yes') & (df['Loves Popcorn'] == 'yes') & (df['Loves Troll 2'] == 'yes')])
+loves_soda_popcorn_hates_troll_2 = len(df.loc[(df['Loves Soda'] == 'yes') & (df['Loves Popcorn'] == 'yes') & (df['Loves Troll 2'] == 'no')])
+loves_soda_hates_popcorn_loves_troll_2 = len(df.loc[(df['Loves Soda'] == 'yes') & (df['Loves Popcorn'] == 'no') & (df['Loves Troll 2'] == 'yes')])
+loves_soda_hates_popcorn_hates_troll_2 = len(df.loc[(df['Loves Soda'] == 'yes') & (df['Loves Popcorn'] == 'no') & (df['Loves Troll 2'] == 'no')])
+loves_popcorn_gini_left = 1 - (loves_soda_popcorn_troll_2/(loves_soda_popcorn_troll_2 + loves_soda_popcorn_hates_troll_2))**2 - (loves_soda_popcorn_hates_troll_2/(loves_soda_popcorn_hates_troll_2 + loves_soda_popcorn_troll_2))**2
+loves_popcorn_gini_right = 1 - (loves_soda_hates_popcorn_loves_troll_2/(loves_soda_hates_popcorn_loves_troll_2 + loves_soda_hates_popcorn_hates_troll_2))**2 - (loves_soda_hates_popcorn_hates_troll_2/(loves_soda_hates_popcorn_hates_troll_2 + loves_soda_hates_popcorn_loves_troll_2))**2
+total_gini_impurity_soda_popcorn = (((loves_soda_popcorn_troll_2 + loves_soda_popcorn_hates_troll_2)/(loves_soda_popcorn_troll_2 + loves_soda_popcorn_hates_troll_2 + loves_soda_hates_popcorn_loves_troll_2 + loves_soda_hates_popcorn_hates_troll_2)) * loves_popcorn_gini_left) + ((loves_troll_2_hates_popcorn + hates_troll_2_hates_popcorn)/(loves_soda_popcorn_troll_2 + loves_soda_popcorn_hates_troll_2 + loves_soda_hates_popcorn_loves_troll_2 + loves_soda_hates_popcorn_hates_troll_2)) * loves_popcorn_gini_right
+print("The total Gini Impurity for Loves Soda and Loves Popcorn is {0}".format(total_gini_impurity_soda_popcorn))
 
 #Calculate the Gini Impurity for Age < 15
+loves_soda_below_age_troll_2 = len(df.loc[(df['Loves Soda'] == 'yes') & (df['Age'] < selected_avg_age) & (df['Loves Troll 2'] == 'yes')])
+loves_soda_below_age_hates_troll_2 = len(df.loc[(df['Loves Soda'] == 'yes') & (df['Age'] < selected_avg_age) & (df['Loves Troll 2'] == 'no')])
+loves_soda_above_age_loves_troll_2 = len(df.loc[(df['Loves Soda'] == 'yes') & (df['Age'] > selected_avg_age) & (df['Loves Troll 2'] == 'yes')])
+loves_soda_above_age_hates_troll_2 = len(df.loc[(df['Loves Soda'] == 'yes') & (df['Age'] > selected_avg_age) & (df['Loves Troll 2'] == 'no')])
