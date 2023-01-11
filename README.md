@@ -137,3 +137,9 @@ WHen the actual value is NO and the predicted value is YES then that is a false 
 
 - Ridge regularizaiton can only shrink the parameters to be asymptotically close to 0 but lasso regularization can shrink the parameter all the way down to 0. Ridge and Lasso
  Regularization are frequently combined to get hte best of both worlds. Lasso regularization is usefule when we need to eliminate useless variable and Ridge regularization is useful when we think most of the variables are useful
+
+ ## Decision Trees
+
+ - There are two types of trees in machine learning: classification and regression. Classifica4tion trees are for discrete values and regressions trees are for continuous values. 
+
+ - When choosing the right variables for the root node of the tree, test to see which variable creates the least impure tree and then quantify (using Gini, Entropy, Information Gain, etc) to determin by how much variables are different. 
