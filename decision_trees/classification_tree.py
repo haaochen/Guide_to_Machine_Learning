@@ -1,5 +1,6 @@
 '''
-This script demonstrates the idea of classification trees in machine learning
+This script demonstrates the idea of classification trees in machine learning. Iterative logic could be used but, for the purposes of learning,
+and since the outcome is determined to be quick, we will do linear logic
 '''
 import pandas as pd
 

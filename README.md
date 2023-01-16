@@ -153,3 +153,5 @@ WHen the actual value is NO and the predicted value is YES then that is a false 
 - There are two types of trees in machine learning: classification and regression. Classification trees are for discrete values and regressions trees are for continuous values.
 
 - When choosing the right variables for the root node of the tree, test to see which variable creates the least impure tree and then quantify (using Gini, Entropy, Information Gain, etc) to determine by how much variables are different.
+
+- The output of a regressions tree is a continuous value, e.g. drug effectiveness.
