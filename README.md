@@ -155,3 +155,5 @@ WHen the actual value is NO and the predicted value is YES then that is a false 
 - When choosing the right variables for the root node of the tree, test to see which variable creates the least impure tree and then quantify (using Gini, Entropy, Information Gain, etc) to determine by how much variables are different.
 
 - The output of a regressions tree is a continuous value, e.g. drug effectiveness.
+
+- In a regression tree we calculate the split of the data wiht SSRs. The values that are less than the value that produces the minimum SSR split to the left. Then we iterate on the left values. When there is one value in the leaf, we may be overfitting the data so we generally keep a minimum of 20 in order to split the data. E.g. we require a minimum of 20 values on the leaf to further split the data on that side.
