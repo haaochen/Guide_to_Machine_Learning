@@ -3,6 +3,7 @@ This script demonstrates a first iteration at regression trees that uses drug do
 '''
 #This is a list of tuples that represent drug amount, and drug effectiveness (percentage), respectively in each tuple
 doses_effectiveness = [(1,0),(3,0),(8,0),(9,3),(12,10),(14,100),(19,100),(23,100),(25,100),(28,73),(28.5,60),(29,55),(29.5,50),(30,47),(31.5,5),(33,0),(37,0),(30,0)]
+print("This is the list of doses and effectiveness: {0}".format(doses_effectiveness))
 
 #In a while loop, collect two values at a time, get the average of values above and below the average of the two point, then determin SSR. Once we reach a minimum SSR, we stop
 #This will find a local minimum but is not guaranteed to find the global minimum. This example is planned such that the local minimum is the correct value
@@ -27,4 +28,4 @@ for i in range(len(doses_effectiveness) - 1):
 
 print("The list of SSR values from the above list of dosages and effectiveness percentages is: {}".format(ssr_list))
 print("The lowest value of the SSR values is: {0}".format(min(ssr_list)))
-print("This means the list splits at values less than: {0}".format(doses_effectiveness[ssr_list.index(min(ssr_list)) + 1]))
+print("This means the list splits at values before: {0}".format(doses_effectiveness[ssr_list.index(min(ssr_list)) + 1]))
