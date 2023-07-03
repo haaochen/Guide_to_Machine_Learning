@@ -157,3 +157,15 @@ WHen the actual value is NO and the predicted value is YES then that is a false 
 - The output of a regressions tree is a continuous value, e.g. drug effectiveness.
 
 - In a regression tree we calculate the split of the data wiht SSRs. The values that are less than the value that produces the minimum SSR split to the left. Then we iterate on the left values. When there is one value in the leaf, we may be overfitting the data so we generally keep a minimum of 20 in order to split the data. E.g. we require a minimum of 20 values on the leaf to further split the data on that side.
+
+## SUpport Vector Machines
+
+- A support vector machines are a set of supervised learning methods can be used for linear or non-linear regression. They can be used for a wide variety of tasks. The goal of SVM are to fine the mazimum separable hyperplane between the different classes available in the target feature.
+
+- Support Vector Classifiers determine the threshold between the different classes in the target feature. Choosing threshold can be tricky because of outliers. Choosing a threshold that allows for misclassifications and then using cross validation to determine the best threshold that produces the best results is one way to handle setting a threshold.
+
+- Using cross validation to gice us the best threshold produces a Support Vector Classifier. If we only measure one variable, then the support vector classifier would only be ont point. Measuring another dimension would give us a line through the data. If we measure n variables, then the data would a an (n-1)-dimensional
+
+- Support Vector Classifiers come from the fact that the data points are supprot vectors. The distance between the points that difine the threshold and the threshold itself is called the margin. Distance between the classifier and misclassifications is called the soft margin.
+
+- Support Vector Machines. Start with low-dimensional data and then use the existing data to create higher dimensions. Lastly, find a Support Vector Classifier that separates the higher dimensional data into two groups. In order to find the higher dimensions, SVMs use kernels. Two of the most popular kernels used are Polynomial and Radial (Radial Basis Function).
